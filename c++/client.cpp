@@ -1,10 +1,3 @@
-/*!
- * Simple chat program (client side).cpp - http://github.com/hassanyf
- * Version - 2.0.1
- *
- * Copyright (c) 2016 Hassan M. Yousuf
- */
-
 #include <iostream>
 #include <string.h>
 #include <sys/types.h>
@@ -46,11 +39,11 @@ int main()
     */
 
     int client;
-    int portNum = 1500; // NOTE that the port number is same for both client and server
+    int portNum = 6000; // NOTE that the port number is same for both client and server
     bool isExit = false;
     int bufsize = 1024;
     char buffer[bufsize];
-    char *ip = "127.0.0.1";
+    char ip[10] = "127.0.0.1";
 
     struct sockaddr_in server_addr;
 
@@ -97,8 +90,8 @@ int main()
     // inet_ntoa converts back packets to IP
     // inet_pton(AF_INET, ip, &server_addr.sin_addr);
 
-    /*if (connect(client,(struct sockaddr *)&server_addr, sizeof(server_addr)) == 0)
-        cout << "=> Connection to the server " << inet_ntoa(server_addr.sin_addr) << " with port number: " << portNum << endl;*/
+    if (connect(client,(struct sockaddr *)&server_addr, sizeof(server_addr)) == 0)
+        cout << "=> Connection to the server " << inet_ntoa(server_addr.sin_addr) << " with port number: " << portNum << endl;
 
     /* ---------- CONNECTING THE SOCKET ---------- */
     /* ---------------- connect() ---------------- */

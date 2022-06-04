@@ -45,7 +45,7 @@ int main()
         7. socklen_t  is an intr type of width of at least 32 bits
     */
     int client, server;
-    int portNum = 1500;
+    int portNum = 6000;
     bool isExit = false;
     int bufsize = 1024;
     char buffer[bufsize];
